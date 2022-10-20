@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+<!-- <form [formGroup]="cardForm" (ngSubmit)="cardSubmit(cardForm)">
+    <input type="text"
+      id="imageUrl"
+      placeholder="imageUrl"
+      name="imageUrl"
+      formControlName="imageUrl"
+      />
+      <br>
+      <input type="text"
+      id="title"
+      placeholder="title"
+      name="title"
+      formControlName="title"
+      />
+      <input type="text"
+      id="genre"
+      placeholder="genre"
+      name="genre"
+      formControlName="genre"
+      />
+      <input type="text"
+      id="language"
+      placeholder="language"
+      name="language"
+      formControlName="language"
+      />
+      <input type="text"
+      id="price"
+      placeholder="price"
+      name="price"
+      formControlName="price"
+      />
+      <input type="text"
+      id="date"
+      placeholder="date"
+      name="date"
+      formControlName="date"
+      />
+      <input type="text"
+      id="place"
+      placeholder="place"
+      name="place"
+      formControlName="place"
+      />
+      <input type="text"
+      id="description"
+      placeholder="description"
+      name="description"
+      formControlName="description"
+      />
+      <input type="text"
+      id="seatscount"
+      placeholder="seatscount"
+      name="seatscount"
+      formControlName="seatscount"
+      />
+  <button type="submit">submit</button>
+  </form> -->
+  
+<!-- card -->
+<br>
+<div>
+  <h5 class="text-center">AVAILABLE MOVIES</h5>
+  <hr style="height:2px; width:10%; border-width:0; color:red; background-color:red">
+
+</div>
+<br>
+<div class="text-center">
+<button type="button" class="btn btn-warning" style="align-self: center;" routerLink="/add"><b>ADD MOVIE</b></button>
+<br></div>
+  <!-- <div id="banner">
+    <div id="cloud-scroll"> -->
+      <div  class="row">
+     <div class=" col-md-4" *ngFor="let card of cards"> 
+      <br>    <br>
+    <div class="card" style="width: 18rem;" *ngIf="card.title.toLowerCase().includes(search.toLowerCase())">
+      <!-- <a routerLink="/updateCard" (click)="sendDataToMovie(card)"> -->
+    <img [src]="card.imageUrl" class="card-img-top " alt="...">
+      <h1 class="text-center"> {{card.title}}</h1>
+      <div class="row">
+        <div class="col-sm-12 text-center"> 
+            <button class="btn btn-primary btn-md center-block" Style="width: 100px; display: inline-block; vertical-align: top; margin-right: 20px;" routerLink="/updateCard" (click)="sendDataToMovie(card)">Update</button>
+             <button  class="btn btn-danger btn-md center-block" Style="width: 100px; display: inline-block; vertical-align: top;" (click)="deleteCard(card.id)">Delete</button>
+         </div>
+    </div>
+    </div>
+  
+      </div>
+  </div>
+    
+<br><br><br><br>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <--------- Include the above in your HEAD tag ----------> 
+
+<!-- <div id="banner">
+  <div id="cloud-scroll"></div>
+</div> -->
+

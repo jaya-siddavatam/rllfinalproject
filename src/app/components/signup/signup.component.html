@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+  <a class="navbar-brand" routerLink="/home">Show Time</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0" style="margin-left: 80%">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchFun(search)">Search</button>
+    </form>
+
+  </div>
+</nav>
+
+<!-- 
+<div class="container">
+    <div class="row mt-5">
+    <form [formGroup]="registerForm" class="col-6 offset-3 mt-5" (ngSubmit)="signupUser(registerForm)">
+    
+      <div  class="form-group row" >
+        <label for="username" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="userName" formControlName="userName">
+        </div>
+      </div>
+    
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" formControlName="email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+      </div>
+      <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary offset-sm-2">SignUp</button>
+              </div>
+            </div>
+          </form>
+          </div>
+          </div>
+               -->
+
+
+          <section class="h-100 h-custom" style="background-image:url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); height: 100vh">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-8 col-xl-6">
+                  <div class="card rounded-3">
+                    <img src="https://inc42.com/wp-content/uploads/2019/04/social-1.jpg"
+                      class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                      alt="Sample photo">
+                    <div class="card-body p-4 p-md-5">
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">User Registration</h3>
+          
+                      <form [formGroup]="registerForm" class="px-md-2" (ngSubmit)="signupUser(registerForm)">
+          
+                        <div class="form-outline mb-4">
+                          <input type="text" id="userName" class="form-control" formControlName="userName" />
+                          <label class="form-label" for="userName">User Name</label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input type="text" id="email" class="form-control" formControlName="email" />
+                          <label class="form-label" for="email">Email</label>
+                        </div>
+          
+                        <div class="form-outline mb-4">
+                          <input type="password" id="password" class="form-control" formControlName="password"/>
+                          <label class="form-label" for="password">Password</label>
+                        </div>
+                        
+          
+                        <button type="submit" class="btn btn-success btn-lg mb-1">SIGN UP</button>
+          
+                      </form>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <br><br>

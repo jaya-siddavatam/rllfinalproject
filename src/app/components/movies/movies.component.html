@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+<div id="carouselExampleCaptions" class="carousel slide main-carousel col-12 " data-ride="carousel">
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img [src]="cards[cards.length -4].imageUrl" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <!-- <h5>{{cards[cards.length -4].title}}</h5> -->
+      
+    </div>
+  </div>
+  <div class="carousel-item" *ngFor="let card of cards.slice(cards.length - 3)">
+    <img [src]="card.imageUrl" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <!-- <h5>{{card.title}}</h5> -->
+     
+   </div>
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</button>
+</div>
+</div>
+
+<br>
+
+
+<div>
+  <h5 class="text-center">MOVIES AVAILABLE</h5>
+  <hr style="height:2px; width:10%; border-width:0; color:red; background-color:red">
+
+</div>
+<br>
+
+
+<!-- card -->
+<div style="margin-left: 100px; margin-right: 100px;">
+<div class="row">
+    <div class="col-3"><app-sidenav></app-sidenav></div>
+      <div class="col-9">
+        <div class="row">
+          
+       <div class=" col-md-4" *ngFor="let card of cards">
+        <br>
+      <div class="card" style="width: 18rem;" *ngIf="card.title.toLowerCase().includes(search.toLowerCase()) &&(language.length == 0 || language.includes(card.language))">
+      <img [src]="card.imageUrl" class="card-img-top " alt="...">
+        <h3 class="text-dark text-center"> {{card.title}}</h3>
+        <button class="btn btn-warning btn-md center-block" style="margin-inline: 80px;" routerLink="/movieDetails" (click)="sendDataToMovie(card)"><b>BOOK NOW</b></button>
+      </div>
+    
+        </div>
+
+
+
+      </div>
+
+  </div>
+    </div>
+  </div>
+  <br><br><br>

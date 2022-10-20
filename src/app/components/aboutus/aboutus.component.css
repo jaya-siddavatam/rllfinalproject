@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+section{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/**about****/
+#about{
+    background: linear-gradient(to right, #222121,rgb(196, 168, 196) 100%);
+   }
+   #about h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: white;
+   }
+   #about p{
+    color: white;
+   }

@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+    <a class="navbar-brand" style="color: white;">Show Time</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<section class="h-100 h-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <div class="card-body p-4 p-md-5">
+
+                <h3 class="mb-4 pb-1 pb-md-0 mb-md-5 px-md-2">Payment Gateway</h3>
+                    
+  
+              <form [formGroup]="paymentForm" class="px-md-2" (ngSubmit)="onSubmit()">
+  
+                <div class="form-outline mb-4">
+                    <label for="cardnumber">Card Number</label>
+                    <input type="number" id="cardnumber" formControlName="cardnumber" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f['cardnumber'].errors }"/>
+                    <div *ngIf="submitted && f['cardnumber'].errors" class="invalid-feedback">
+                        <div *ngIf="f['cardnumber'].errors['required']">Card number is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="month">Name On Card</label>
+                    <input type="text" id="month" formControlName="month" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f['month'].errors }"/>
+                    <div *ngIf="submitted && f['month'].errors" class="invalid-feedback">
+                        <div *ngIf="f['month'].errors['required']">Name on Card is Required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="year">Date of Expiry</label>
+                    <input type="number" id="year" formControlName="year" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f['year'].errors }"/>
+                    <div *ngIf="submitted && f['year'].errors" class="invalid-feedback">
+                        <div *ngIf="f['year'].errors['required']">Date Of Expriry Required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="number" id="cvv" formControlName="cvv" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f['cvv'].errors  }" required/>
+                    <div *ngIf="submitted && f['cvv'].errors" class="invalid-feedback">
+                        <div *ngIf="f['cvv'].errors['required']">CVV Required</div>
+                    </div>
+                </div>
+            
+                
+        <button [disabled]="loading" class="btn btn-success btn-lg mb-1"  [disabled]="paymentForm.invalid">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+           Pay 
+        </button >
+        <!-- <input type="submit" class="btn btn-success btn-lg mb-1" value="submit" [disabled]="paymentForm.invalid"> -->
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/movieDetails" class="btn btn-link btn-lg mb-1">Cancel</a>
+    
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
